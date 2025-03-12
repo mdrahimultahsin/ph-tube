@@ -1,43 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PH-Tube</title>
     <!-- Link Tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
+    <style>
+
+      .active {
+        background: #ff1f3d;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
     <header class="w-11/12 md:w-10/12 mx-auto py-5 border-b border-[#17171720]">
-        <nav class="flex justify-between items-center">
-            <div>
-                <img class="w-40" src="img/Logo.png" alt="">
-            </div>
-            <div>
-                <label class="input">
-                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
-                    <input type="search" required placeholder="Search"/>
-                  </label>
-            </div>
-            <div>
-                <button class="btn bg-[#FF1F3D] text-white">Sort by value</button>
-            </div>
-        </nav>
+      <nav class="flex justify-between items-center">
+        <div>
+          <img class="w-40" src="img/Logo.png" alt="" />
+        </div>
+        <div>
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input
+              id="searchInput"
+              type="search"
+              required
+              placeholder="Search"
+            />
+          </label>
+        </div>
+        <div class="hidden sm:block">
+          <button class="btn bg-[#FF1F3D] text-white">Sort by value</button>
+        </div>
+      </nav>
     </header>
 
     <main class="w-11/12 md:w-10/12 mx-auto py-5">
-        <section id="categories-container" class="flex justify-center gap-5">
-            <div>
-                <button class="btn btn-md bg-[#FF1F3D] text-white">All</button>
-            </div>
-        </section>
-        <!-- Video Card Section -->
-         <section id="videos-container" class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-5">
+      <section id="categories-container" class="flex justify-center gap-5">
+        <div>
+          <button
+            id="btn-all"
+            onclick="loadVideos()"
+            class="btn btn-md bg-gray-200 hover:bg-[#FF1F3D] hover:text-white"
+          >
+            All
+          </button>
+        </div>
+      </section>
+      <!-- Video Card Section -->
+      <section id="loading-spinner" class="hidden text-center py-10">
+        <span class="loading loading-dots loading-xl"></span>
+      </section>
+      <section
+        id="videos-container"
+        class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-5"
+      >
+        <div
+          id="no-content"
+          class="flex items-center justify-center flex-col gap-2 py-15 text-center col-span-full"
+        >
+          <img class="w-30" src="img/Icon.png" alt="" />
+          <h2 class="font-bold text-3xl">
+            Oops!! Sorry, There is no<br />
+            content here
+          </h2>
+        </div>
+      </section>
 
-         </section>
+      <section>
+        
+        <!-- Open the modal using ID.showModal() method -->
+
+<dialog id="video_details" class="modal modal-bottom sm:modal-middle ">
+
+    
+  
+  
+</dialog>
+      </section>
     </main>
-
+    
     <script src="script/index.js"></script>
-</body>
+  </body>
 </html>
