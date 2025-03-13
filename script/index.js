@@ -65,7 +65,7 @@ const showVideoDetails =(video) =>{
         <div class="w-full card image-full">
             <figure>
               <img
-                src="${video.thumbnail}"
+                src=${video.thumbnail}
                 alt="Shoes" />
             </figure>
             <div class="card-body">
@@ -89,7 +89,7 @@ const showVideoDetails =(video) =>{
                     <p class="text-gray-500">${video.others.views} views</p></div>
                     
                 </div> 
-
+              
                     <div class="modal-action">
                         <form method="dialog">
                           <!-- if there is a button in form, it will close the modal -->
@@ -189,5 +189,5 @@ const displayVideos = (videos) => {
 document.getElementById('searchInput').addEventListener('keyup',(e)=>{
   loadVideos(e.target.value)
 })
-
+loadVideos()
 loadCatergories();
